@@ -32,7 +32,7 @@ router.post("/register", async (req, res) => {
       expiresIn: "1h",
     });
 
-    res.json({ success: true, token });
+    res.json({ success: true, token, username: user.username });
   } catch (err) {
     console.error(err.message);
     res.status(500).send("Server error");

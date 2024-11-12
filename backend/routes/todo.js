@@ -1,5 +1,5 @@
 const express = require("express");
-const TODO = require("../models/TODO");
+const TODO = require("../models/Todo");
 const auth = require("../middleware/auth");
 
 const router = express.Router();
@@ -122,9 +122,9 @@ router.put("/:id", auth, async (req, res) => {
   }
 });
 
-//@description     Delete task
-//@route           DELETE /api/tasks/:id
-//@access          user (owner)
+// //@description     Delete task
+// //@route           DELETE /api/tasks/:id
+// //@access          user (owner)
 router.delete("/:id", auth, async (req, res) => {
   try {
     const task = await TODO.findById(req.params.id);
